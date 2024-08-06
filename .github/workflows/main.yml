@@ -1,0 +1,17 @@
+name: Learn basic of GitHub Action
+on:
+  push:
+    branches:
+      -  main
+env:
+  JDK_VERSION: "openjdk11-jdk"
+jobs:
+  install-java:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    steps:
+      - name: install java
+        run: |
+          apk add --no-cache $JDK_VERSION
+          java --version
