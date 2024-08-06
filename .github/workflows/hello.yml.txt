@@ -1,0 +1,16 @@
+name: Learn basic of GitHub Action
+
+on:
+  push:
+    branches:
+      -  main
+
+jobs:
+  helloworld:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+
+    steps:
+      - name: print hellow
+        run: cat /etc/os-release
